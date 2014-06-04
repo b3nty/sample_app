@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
+
+  resources :users
+  devise_for :users
 
   match '/signup',  :to => 'users#new', :via => [:get]
 
