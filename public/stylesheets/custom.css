@@ -142,3 +142,9 @@ td.sidebar {
   border: 1px solid #999;
   margin-bottom: -15px;
 }
+
+/* formulaire d'inscription 
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}

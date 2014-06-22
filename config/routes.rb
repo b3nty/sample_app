@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
 
-  resources :users
+  
   devise_for :users
-
-  match '/signup',  :to => 'users#new', :via => [:get]
+  resources :users
 
   match '/contact', :to => 'pages#contact', :via => [:get]
   match '/about',   :to => 'pages#about', :via => [:get]

@@ -6,6 +6,9 @@ gem 'rails', '4.1.1'
 
 gem 'thin'
 
+#getbootstrap
+gem 'bootstrap-sass'
+
 gem 'pg'
 gem 'rails_12factor', group: :production
 
