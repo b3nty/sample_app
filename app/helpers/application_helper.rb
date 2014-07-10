@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def logo
-    logo = image_tag("logo.jpg", :alt => "Application exemple", :class => "round")
+    logo = image_tag("affiche.png", :alt => "Application exemple", :class => "round")
   end
 
   # Retourner un titre basé sur la page.
@@ -13,4 +13,5 @@ module ApplicationHelper
       "#{base_titre} | #{@titre}"
     end
   end
+
 end

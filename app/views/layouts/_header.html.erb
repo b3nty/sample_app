@@ -1,10 +1,11 @@
 <header>
-  <%= link_to logo, root_path %>
+  <%= logo %>
   <nav class="round">
     <ul>
       <li><%= link_to "Accueil", root_path %></li>
-      <li><%= link_to "Aide", help_path %></li>
-      <li><%= link_to "Inscription", new_user_registration_path %></li>
+      <li><%= link_to "L'équipe/Les votes", equipe_path %></li>
+      <li><%= link_to "Les Défis", defis_path %></li>
+      <li><%= link_to "Le Classement", classement_path %></li>
     </ul>
   </nav>
 </header>

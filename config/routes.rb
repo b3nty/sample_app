@@ -1,19 +1,26 @@
 Rails.application.routes.draw do
 
 
-  
-  devise_for :users
+  resources :votes
+
+  resources :user_challenges
+
+  resources :challenges
   resources :users
 
   match '/contact', :to => 'pages#contact', :via => [:get]
   match '/about',   :to => 'pages#about', :via => [:get]
-  match '/help',    :to => 'pages#help', :via => [:get]
+  match '/equipe',    :to => 'pages#equipe', :via => [:get]
+  match '/defis',    :to => 'pages#defis', :via => [:get]
+  match '/classement',    :to => 'pages#classement', :via => [:get]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'pages#home'
+
+  require 'bootstrap-sass'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

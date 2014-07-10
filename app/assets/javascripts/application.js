@@ -10,7 +10,17 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//
+//=require jquery
+//=require jquery.turbolinks
+//=require jquery_ujs
+//=require turbolinks
+//=require bootstrap
+//=require_tree .
+$('glyphicon-thumbs-up').popover({ 
+    html : true,
+    //trigger: "click", // може да се смени
+    content: function() {
+      return $('#popover_content_wrapper').html();
+    }
+});

@@ -3,7 +3,8 @@
 }
 
 body {
-  background: #cff;
+  background: url('/assets/background.jpg');
+  background-size: 2300px;
 }
 
 header {
@@ -11,19 +12,21 @@ header {
 }
 
 img {
-  max-width: 50%;
+  max-width: 100%;
+
 }
 
 header img {
   padding: 1em;
   background: #fff;
+  border-radius: 5px;
 }
 
 section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #fff;
+  border-radius: 5px;
 }
 
 section h1 {
@@ -49,13 +52,14 @@ a:visited {
 /* Navigation */
 
 nav {
-  float: right;
+  float: left;
 }
 
 nav {
   background-color: white;
   padding: 0 0.7em;
   white-space: nowrap;
+  border-radius: 5px;
 }
 
 nav ul {
@@ -82,29 +86,6 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Bouton inscription */
-
-a.signup_button {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  text-align: center;
-  width: 190px;
-  color: #fff;
-  background: #006400;
-  font-size: 150%;
-  font-weight: bold;
-  padding: 20px;
-}
-
-/* Coins arrondis */
-
-.round {
-  -moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
-}
-
 /* pied de page */
 
 footer {
@@ -113,38 +94,48 @@ footer {
   width: 710px;
   margin-left: auto;
   margin-right: auto;
+  clear:both;
 }
 
 footer nav {
   float: none;
+  border-radius: 5px;
 }
 
-/* User show page */
+/* vote */
 
-table.profile {
-  width: 100%;
-  margin-bottom: 0;
+#b1 {
+  color: green;
 }
 
-td.main {
-  width: 70%;
-  padding: 1em;
+#b1 span {
+  background-color:green;
 }
 
-td.sidebar {
-  width: 30%;
-  padding: 1em;
-  vertical-align: top;
-  background: #ffc;
+#b2 {
+  color: #CC0000;
+  margin-left: 60px;
 }
 
-.profile img.gravatar {
-  border: 1px solid #999;
-  margin-bottom: -15px;
+#b2 span {
+  background-color:#CC0000;
 }
 
-/* formulaire d'inscription 
+/* Tableau */
 
-div.field, div.actions {
-  margin-bottom: 10px;
+td {
+  text-align: center;
+  border : 0.5px solid black;
+}
+
+/* équipe */
+
+.thumbnail {
+  background: url('/assets/silver.jpg');
+  background-size: 440px;
+}
+
+#gold .thumbnail {
+  background: url('/assets/gold.jpg');
+  background-size: 320px;
 }

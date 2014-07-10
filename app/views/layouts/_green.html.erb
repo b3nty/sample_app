@@ -1,0 +1,18 @@
+<div class="dropdown">
+  <button type="button" class="glyphicon glyphicon-thumbs-up" data-toggle="dropdown"></button>
+
+  <div class="dropdown-menu" >
+
+    <%= simple_form_for @vote do |f| %>
+      <%= f.hidden_field :nom_id, :value => "nom_id".to_i %>
+
+      <%= f.select :user_id, User.all.map { |r| [r.nom, r.id] }, include_blank: false %>
+      <%= f.select :user_challenge_id, Challenge.all.map { |r| [r.defi, r.id] }, include_blank: false %>
+      <% @user_challenge_id = UserChallenge.where(:user_id, :user_challenge_id) %>
+      <%= f.input :user_challenge_id, as: :hidden, input_html: { value: "#{@user_challenge_id}".to_i} %>
+
+      <%= f.input :type, as: :hidden, input_html: { value: "green" } %>
+      <%= f.button :submit, class: "btn btn-default", value: "Validé !" %>
+    <% end %>
+  </div>
+</div>

@@ -9,10 +9,24 @@ class PagesController < ApplicationController
   end
 
   def about
-    @titre = "À Propos"
+    @titre = "Réglement"
   end
 
-  def help
-    @title = "Aide"
+  def equipe
+    @titre = "L'équipe/Les votes"
+    @users = User.all
+    @challenges = Challenge.all
+    @user_challenge = UserChallenge.new
+    @user = User.new
+    @challenge = Challenge.new
+    @vote = Vote.new
+  end
+
+  def defis
+    @titre = "Les Défis"
+  end
+
+  def classement
+    @titre = "Le Classement"
   end
 end
