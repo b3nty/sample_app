@@ -6,12 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+
 User.all.each do |x|
   Challenge.all.each do |y|
     UserChallenge.create(user_id: x.id, challenge_id: y.id)
   end
 end
 
-#5.times do |x|
-#  User.create(nom: "invité#{x}")
-#end
+5.times do |x|
+  User.create(nom: "invité#{x}")
+end
