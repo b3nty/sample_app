@@ -61,7 +61,5 @@ gem 'simple_form'
 
 gem 'awesome_print'
 
-gem 'rails_12factor', group: :production
-
 #enregistrer de utilisateur 
 #gem 'devise'
