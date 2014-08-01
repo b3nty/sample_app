@@ -3,7 +3,7 @@
 }
 
 body {
-  background-image: asset-url('/assets/background.jpg', image);
+  background: url('/assets/background.jpg');
   background-size: 2600px;
 }
 
