@@ -12,6 +12,6 @@ User.all.each do |x|
   end
 end
 
-5.times do |x|
-  User.create(nom: "invité#{x}")
-end
+#5.times do |x|
+#  User.create(nom: "invité#{x}")
+#end

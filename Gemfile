@@ -59,5 +59,7 @@ end
 
 gem 'simple_form'
 
+gem 'awesome_print'
+
 #enregistrer de utilisateur 
 #gem 'devise'

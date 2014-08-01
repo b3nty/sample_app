@@ -1,5 +1,19 @@
 <h1>Le Classement</h1>
 
+<% @paresse = UserChallenge.where(challenge_id: 1).order(:green).limit(7) %>
+<% @avarice = UserChallenge.where(challenge_id: 2).order(:green).limit(7) %>
+<% @colere = UserChallenge.where(challenge_id: 3).order(:green).limit(7) %>
+<% @envie = UserChallenge.where(challenge_id: 4).order(:green).limit(7) %>
+<% @gourmandise = UserChallenge.where(challenge_id: 5).order(:green).limit(7) %>
+<% @luxure = UserChallenge.where(challenge_id: 6).order(:green).limit(7) %>
+<% @orgueil = UserChallenge.where(challenge_id: 7).order(:green).limit(7) %>
+
+<% @paresse.each do |a,b,c,d,e| %>
+  <% @table.user = User.find(b) %>
+  <% @table.green = @table.gree.to_i + d.to_i %>
+  <% @table.red = @table.red.to_i + e.to_i %>
+<% end %>
+
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -8,8 +22,8 @@
     <tbody>
       <tr>
         <td>#</td>
-        <td>Pseudo</td>
-        <td>J.</td>
+        <td>Prenom</td>
+        <td>Nb.d.</td>
         <td><span class="glyphicon glyphicon-thumbs-up" role="button"></span></td>
         <td><span class="glyphicon glyphicon-thumbs-down" role="button"></span></td>
         <td>Diff.</td>

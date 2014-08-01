@@ -4,6 +4,17 @@
   L'équipe au complet, à vos votes !!
 </p>
 
+<%if notice%>
+  <div class="alert alert-success" role="alert">
+    <%= flash[:notice] %>
+  </div>
+<%end%>
+<%if alert%>
+  <div class="alert alert-danger" role="alert">
+    <%= flash[:alert] %><br>
+  </div>
+<%end%>
+
 
 <div class="row">
   <div class="col-sm-6 col-md-4">
@@ -12,8 +23,10 @@
       <div class="caption">
         <h3>Gaultier</h3>
         <p>il fenomeno</p>
-        <%= render 'layouts/green', locals: {nom_id: 1} %>
-        <%= render 'layouts/red', locals: {user_id: 1} %>
+        <% @nom_id = 1 %>
+        <%= render 'layouts/green', locals: {nom_id: @nom_id} %>
+        <%= render 'layouts/red', locals: {nom_id: @nom_id} %>
+        <p> </p><br>
       </div>
     </div>
   </div>
@@ -23,7 +36,10 @@
       <div class="caption">
         <h3>Taoufik</h3>
         <p>dit "le snack"</p>
-        <p><a id="b1" href="#" class="glyphicon glyphicon-thumbs-up" role="button"></a>  <a id="b2" href="#" class="glyphicon glyphicon-thumbs-down" role="button"></a></p>
+        <% @nom_id = 2 %>
+        <%= render 'layouts/green', locals: {nom_id: @nom_id} %>
+        <%= render 'layouts/red', locals: {nom_id: @nom_id} %>
+        <p> </p><br>
       </div>
     </div>
   </div>
@@ -33,7 +49,10 @@
       <div class="caption">
         <h3>Laurent</h3>
         <p>dit "lorenzo"</p>
-        <p><a id="b1" href="#" class="glyphicon glyphicon-thumbs-up" role="button"></a>  <a id="b2" href="#" class="glyphicon glyphicon-thumbs-down" role="button"></a></p>
+        <% @nom_id = 3 %>
+        <%= render 'layouts/green', locals: {nom_id: @nom_id} %>
+        <%= render 'layouts/red', locals: {nom_id: @nom_id} %>
+        <p> </p><br>
       </div>
     </div>
   </div>
@@ -43,7 +62,10 @@
       <div class="caption">
         <h3>Nicolas</h3>
         <p>dit "virus"</p>
-        <p><a id="b1" href="#" class="glyphicon glyphicon-thumbs-up" role="button"></a>  <a id="b2" href="#" class="glyphicon glyphicon-thumbs-down" role="button"></a></p>
+        <% @nom_id = 4 %>
+        <%= render 'layouts/green', locals: {nom_id: @nom_id} %>
+        <%= render 'layouts/red', locals: {nom_id: @nom_id} %>
+        <p> </p><br>
       </div>
     </div>
   </div>
@@ -53,7 +75,10 @@
       <div class="caption">
         <h3>Benoit</h3>
         <p>bentygoal !!!!</p>
-        <p><a id="b1" href="#" class="glyphicon glyphicon-thumbs-up" role="button"></a>  <a id="b2" href="#" class="glyphicon glyphicon-thumbs-down" role="button"></a></p>
+        <% @nom_id = 5 %>
+        <%= render 'layouts/green', locals: {nom_id: @nom_id} %>
+        <%= render 'layouts/red', locals: {nom_id: @nom_id} %>
+        <p> </p><br>
       </div>
     </div>
   </div>
@@ -61,9 +86,12 @@
     <div class="thumbnail">
       <%= image_tag("kevin.jpg") %>
       <div class="caption">
-        <h3>Kevin</h3>
+        <h3>Kévin</h3>
         <p>dit "kéké des plages"</p>
-        <p><a id="b1" href="#" class="glyphicon glyphicon-thumbs-up" role="button"></a>  <a id="b2" href="#" class="glyphicon glyphicon-thumbs-down" role="button"></a></p>
+        <% @nom_id = 6 %>
+        <%= render 'layouts/green', locals: {nom_id: @nom_id} %>
+        <%= render 'layouts/red', locals: {nom_id: @nom_id} %>
+        <p> </p><br>
       </div>
     </div>
   </div>
@@ -74,7 +102,10 @@
         <div class="caption">
           <h3>Thomas</h3>
           <p>dit "Microute" : l'ancien nouveau</p>
-          <p><a id="b1" href="#" class="glyphicon glyphicon-thumbs-up" role="button"></a>  <a id="b2" href="#" class="glyphicon glyphicon-thumbs-down" role="button"></a></p>
+          <% @nom_id = 7 %>
+          <%= render 'layouts/green', locals: {nom_id: @nom_id} %>
+          <%= render 'layouts/red', locals: {nom_id: @nom_id} %>
+          <p> </p><br>
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :userchallenges
-  has_many :challenge, :through => :userchallenges
-  has_many :vote
-  has_many :userchallenge, :through => :vote
+  has_many :challenges, :through => :userchallenges
+  has_many :votes
+  has_many :userchallenges, :through => :votes
 end

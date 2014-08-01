@@ -28,5 +28,7 @@ class PagesController < ApplicationController
 
   def classement
     @titre = "Le Classement"
+    @user_challenges = UserChallenge.all
+    @table = Table.new
   end
 end

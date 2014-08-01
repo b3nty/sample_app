@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140703074723) do
+ActiveRecord::Schema.define(version: 20140715110711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "challenges", force: true do |t|
     t.string   "defi"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tables", force: true do |t|
+    t.string   "user"
+    t.integer  "nb"
+    t.integer  "green"
+    t.integer  "red"
+    t.integer  "diff"
+    t.integer  "diff_moy"
+    t.integer  "pts"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

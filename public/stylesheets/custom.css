@@ -4,7 +4,7 @@
 
 body {
   background: url('/assets/background.jpg');
-  background-size: 2300px;
+  background-size: 2600px;
 }
 
 header {
@@ -12,13 +12,9 @@ header {
 }
 
 img {
-  max-width: 100%;
-
-}
-
-header img {
-  padding: 1em;
-  background: #fff;
+  max-width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
   border-radius: 5px;
 }
 
@@ -104,23 +100,23 @@ footer nav {
 
 /* vote */
 
-#b1 {
+.glyphicon-thumbs-up {
   color: green;
 }
 
-#b1 span {
-  background-color:green;
-}
-
-#b2 {
+.glyphicon-thumbs-down {
   color: #CC0000;
-  margin-left: 60px;
 }
 
-#b2 span {
-  background-color:#CC0000;
+.dropdown .glyphicon-thumbs-up {
+  color: green;
+  float: left;
 }
 
+.dropdown .glyphicon-thumbs-down {
+  color: #CC0000;
+  float: right;
+}
 /* Tableau */
 
 td {
@@ -131,6 +127,7 @@ td {
 /* équipe */
 
 .thumbnail {
+  text-align: center;
   background: url('/assets/silver.jpg');
   background-size: 440px;
 }

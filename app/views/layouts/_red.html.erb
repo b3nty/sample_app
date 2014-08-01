@@ -2,14 +2,17 @@
   <button type="button" class="glyphicon glyphicon-thumbs-down" data-toggle="dropdown"></button>
 
   <div class="dropdown-menu" >
-    <form action="" role="form">
-      <div class="form-group">
-        <label for="user">Ton Nom :</label>
-        <input type="text" class="form-control" id="user" placeholder="Anus" />
-        <label for="user">Le Défi :</label>
-        <input type="text" class="form-control" id="defi" placeholder="Namek" />
-      </div>
-      <button type="submit" class="btn btn-default">Validé !</button>
-    </form>
+
+    <%= simple_form_for @vote do |f| %>
+      <%= f.hidden_field :nom_id, :value => "#{@nom_id}".to_i %>
+
+      <%= f.label :user_id, "Qui es tu ?" %><br>
+      <%= f.select :user_id, User.all.reject{|r| r.id == @nom_id.to_i}.map{ |r| [r.nom, r.id] }, include_blank: false %><br>
+      <%= f.label :user_challenge_id, "Quel défi ?" %><br>
+      <%= f.select :user_challenge_id, Challenge.all.map { |r| [r.defi, r.id] }, include_blank: false %><br>
+
+      <%= f.input :type, as: :hidden, input_html: { value: "rouge" } %>
+      <%= f.button :submit, class: "btn btn-default", value: "Validé !" %>
+    <% end %>
   </div>
 </div>

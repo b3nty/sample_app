@@ -12,8 +12,5 @@
  *
  *= require_self
  *= require bootstrap
- *@import "bootstrap"
  *= require_tree .
-
- 
  */
