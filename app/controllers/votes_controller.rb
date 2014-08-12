@@ -72,6 +72,8 @@ class VotesController < ApplicationController
         @user_challenge = UserChallenge.where(user_id: user_challenge_params[:nom_id], challenge_id: user_challenge_params[:user_challenge_id]).first
         @vote.green = @vote.green.to_i + 1
         @user_challenge.green = @user_challenge.green.to_i + 1
+        @table = Table.where(user: user_challenge_params[:nom_id]).first
+        @table.green = @table.green.to_i + 1
         respond_to do |format|
           if @vote.save && @user_challenge.save
             flash[:notice] = "Tu viens de mettre un pouce #{type}"
@@ -128,6 +130,8 @@ class VotesController < ApplicationController
         @user_challenge = UserChallenge.where(user_id: user_challenge_params[:nom_id], challenge_id: user_challenge_params[:user_challenge_id]).first
         @vote.red = @vote.red.to_i + 1
         @user_challenge.red = @user_challenge.red.to_i + 1
+        @table = Table.where(user: user_challenge_params[:nom_id]).first
+        @table.red = @table.red.to_i + 1
         respond_to do |format|
           if @vote.save && @user_challenge.save
             flash[:notice] = "Tu viens de mettre un pouce #{type}"
@@ -138,6 +142,22 @@ class VotesController < ApplicationController
         end
       end
     end
+
+    @paresse = UserChallenge.where(challenge_id: 1).order(:green).reverse_order.limit(7)
+    @avarice = UserChallenge.where(challenge_id: 2).order(:green).reverse_order.limit(7)
+    @colere = UserChallenge.where(challenge_id: 3).order(:green).reverse_order.limit(7)
+    @envie = UserChallenge.where(challenge_id: 4).order(:green).reverse_order.limit(7)
+    @gourmandise = UserChallenge.where(challenge_id: 5).order(:green).reverse_order.limit(7)
+    @luxure = UserChallenge.where(challenge_id: 6).order(:green).reverse_order.limit(7)
+    @orgueil = UserChallenge.where(challenge_id: 7).order(:green).reverse_order.limit(7)
+
+    #@table = Table.where(user: @paresse.user(1)).first
+    #@table.pts = 3
+
+    #@paresse.each do |user|
+      
+    #end
+
   end
 
   # PATCH/PUT /votes/1

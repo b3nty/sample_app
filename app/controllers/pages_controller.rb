@@ -20,6 +20,8 @@ class PagesController < ApplicationController
     @user = User.new
     @challenge = Challenge.new
     @vote = Vote.new
+    @table = Table.new
+    @tables = Table.all
   end
 
   def defis
@@ -28,7 +30,7 @@ class PagesController < ApplicationController
 
   def classement
     @titre = "Le Classement"
-    @user_challenges = UserChallenge.all
     @table = Table.new
+    @tables = Table.all
   end
 end

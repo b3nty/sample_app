@@ -136,3 +136,19 @@ td {
   background: url('/assets/gold.jpg');
   background-size: 320px;
 }
+
+.alert-success {
+  color: green;
+  text-align: center;
+  background-color: rgb(154,205,50);
+  border: 0.5px solid green;
+  border-radius: 5px;
+}
+
+.alert-danger {
+  color: red;
+  text-align: center;
+  background-color: #FF6666;
+  border: 0.5px solid red;
+  border-radius: 5px;
+}

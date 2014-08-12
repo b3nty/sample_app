@@ -4,17 +4,18 @@
   L'équipe au complet, à vos votes !!
 </p>
 
-<%if notice%>
-  <div class="alert alert-success" role="alert">
-    <%= flash[:notice] %>
-  </div>
-<%end%>
-<%if alert%>
-  <div class="alert alert-danger" role="alert">
+<%if flash[:alert]%>
+  <div class="alert-danger" role="alert">
     <%= flash[:alert] %><br>
   </div>
 <%end%>
+<%if flash[:notice]%>
+  <div class="alert-success" role="alert">
+    <%= flash[:notice] %><br>
+  </div>
+<%end%>
 
+<br>
 
 <div class="row">
   <div class="col-sm-6 col-md-4">
