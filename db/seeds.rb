@@ -8,15 +8,15 @@
 
 
 i=0
-User.all.each do |x|
-  Challenge.all.each do |y|
-    if i < 7
-      UserChallenge.create(user_id: x.id, challenge_id: y.id)
-    end
-  end
-  i = i + 1
-end
-
-#5.times do |x|
-#  User.create(nom: "invité#{x}")
+#User.all.each do |x|
+#  Challenge.all.each do |y|
+#    if i < 7
+#      UserChallenge.create(user_id: x.id, challenge_id: y.id)
+#    end
+#  end
+#  i = i + 1
 #end
+
+5.times do |x|
+  User.create(nom: "invité#{x}")
+end
