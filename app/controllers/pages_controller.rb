@@ -20,8 +20,6 @@ class PagesController < ApplicationController
     @user = User.new
     @challenge = Challenge.new
     @vote = Vote.new
-    @table = Table.new
-    @tables = Table.all
   end
 
   def defis
@@ -30,7 +28,6 @@ class PagesController < ApplicationController
 
   def classement
     @titre = "Le Classement"
-    @table = Table.new
-    @tables = Table.all
+    @users = User.order("pts DESC, green - red DESC").limit(7)
   end
 end

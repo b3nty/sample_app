@@ -72,10 +72,10 @@ class VotesController < ApplicationController
         @user_challenge = UserChallenge.where(user_id: user_challenge_params[:nom_id], challenge_id: user_challenge_params[:user_challenge_id]).first
         @vote.green = @vote.green.to_i + 1
         @user_challenge.green = @user_challenge.green.to_i + 1
-        @table = Table.where(user: user_challenge_params[:nom_id]).first
-        @table.green = @table.green.to_i + 1
+        @user = User.where(id: user_challenge_params[:nom_id]).first
+        @user.green = @user.green.to_i + 1
         respond_to do |format|
-          if @vote.save && @user_challenge.save
+          if @vote.save && @user_challenge.save && @user.save
             flash[:notice] = "Tu viens de mettre un pouce #{type}"
             format.html { redirect_to '/equipe' }
           else
@@ -130,10 +130,10 @@ class VotesController < ApplicationController
         @user_challenge = UserChallenge.where(user_id: user_challenge_params[:nom_id], challenge_id: user_challenge_params[:user_challenge_id]).first
         @vote.red = @vote.red.to_i + 1
         @user_challenge.red = @user_challenge.red.to_i + 1
-        @table = Table.where(user: user_challenge_params[:nom_id]).first
-        @table.red = @table.red.to_i + 1
+        @user = User.where(id: user_challenge_params[:nom_id]).first
+        @user.red = @user.red.to_i + 1
         respond_to do |format|
-          if @vote.save && @user_challenge.save
+          if @vote.save && @user_challenge.save && @user.save
             flash[:notice] = "Tu viens de mettre un pouce #{type}"
             format.html { redirect_to '/equipe' }
           else
@@ -143,20 +143,106 @@ class VotesController < ApplicationController
       end
     end
 
-    @paresse = UserChallenge.where(challenge_id: 1).order(:green).reverse_order.limit(7)
-    @avarice = UserChallenge.where(challenge_id: 2).order(:green).reverse_order.limit(7)
-    @colere = UserChallenge.where(challenge_id: 3).order(:green).reverse_order.limit(7)
-    @envie = UserChallenge.where(challenge_id: 4).order(:green).reverse_order.limit(7)
-    @gourmandise = UserChallenge.where(challenge_id: 5).order(:green).reverse_order.limit(7)
-    @luxure = UserChallenge.where(challenge_id: 6).order(:green).reverse_order.limit(7)
-    @orgueil = UserChallenge.where(challenge_id: 7).order(:green).reverse_order.limit(7)
+    @users = User.all
 
-    #@table = Table.where(user: @paresse.user(1)).first
-    #@table.pts = 3
+    @users.each do |user|
+      user.pts = 0
+    end
 
-    #@paresse.each do |user|
-      
-    #end
+    @paresses = UserChallenge.where(challenge_id: 1).order(:green).reverse_order.limit(7)
+    @avarices = UserChallenge.where(challenge_id: 2).order(:green).reverse_order.limit(7)
+    @coleres = UserChallenge.where(challenge_id: 3).order(:green).reverse_order.limit(7)
+    @envies = UserChallenge.where(challenge_id: 4).order(:green).reverse_order.limit(7)
+    @gourmandises = UserChallenge.where(challenge_id: 5).order(:green).reverse_order.limit(7)
+    @luxures = UserChallenge.where(challenge_id: 6).order(:green).reverse_order.limit(7)
+    @orgueils = UserChallenge.where(challenge_id: 7).order(:green).reverse_order.limit(7)
+
+    x = 3
+
+    @paresses.each do |i|
+      @user = User.find(i.user_id)
+      if i == @paresses.first
+        @user.pts = x
+      else
+        if i.green == @paresses[@paresses.index(i)-1].green
+          @user.pts = x
+        else
+          if x > 0
+            x = x - 1 
+          end
+          @user.pts = x
+        end
+      end
+      @user.save
+    end
+
+    x = 3
+=begin
+    @avarices.each do |i|
+      @user = User.find(i.user_id)
+      @user.pts = x
+      @user.save
+      if x > 0
+        x = x - 1
+      end
+    end
+
+    x = 3
+
+    @coleres.each do |i|
+      @user = User.find(i.user_id)
+      @user.pts = x
+      @user.save
+      if x > 0
+        x = x - 1
+      end
+    end
+
+    x = 3
+
+    @envies.each do |i|
+      @user = User.find(i.user_id)
+      @user.pts = x
+      @user.save
+      if x > 0
+        x = x - 1
+      end
+    end
+
+    x = 3
+
+    @gourmandises.each do |i|
+      @user = User.find(i.user_id)
+      @user.pts = x
+      @user.save
+      if x > 0
+        x = x - 1
+      end
+    end
+
+    x = 3
+
+    @luxures.each do |i|
+      @user = User.find(i.user_id)
+      @user.pts = x
+      @user.save
+      if x > 0
+        x = x - 1
+      end
+    end
+
+    x = 3
+
+    @orgueils.each do |i|
+      @user = User.find(i.user_id)
+      @user.pts = x
+      @user.save
+      if x > 0
+        x = x - 1
+      end
+    end
+=end
+
 
   end
 

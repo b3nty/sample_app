@@ -7,19 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-
-#User.all.each do |x|
-#  Challenge.all.each do |y|
-#    UserChallenge.create(user_id: x.id, challenge_id: y.id)
-#  end
-#end
-
-i = 0
-User.all.each do |user|
-  if i < 7
-    Table.create(user: user)
-    i = i + 1
+i=0
+User.all.each do |x|
+  Challenge.all.each do |y|
+    if i < 7
+      UserChallenge.create(user_id: x.id, challenge_id: y.id)
+    end
   end
+  i = i + 1
 end
 
 #5.times do |x|
