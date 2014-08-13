@@ -1,6 +1,6 @@
 class ChangeTableUser < ActiveRecord::Migration
   def change
-    add_column :users, :green, :integer
-    add_column :users, :red, :integer
+    remove_column :users, :defis
+    add_column :users, :pts, :integer
   end
 end
