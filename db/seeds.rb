@@ -17,6 +17,6 @@ i=0
 #  i = i + 1
 #end
 
-5.times do |x|
-  User.create(nom: "invité#{x}")
-end
+#5.times do |x|
+#  User.create(nom: "invité#{x}")
+#end
