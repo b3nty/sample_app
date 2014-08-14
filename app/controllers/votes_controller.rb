@@ -177,72 +177,118 @@ class VotesController < ApplicationController
     end
 
     x = 3
-=begin
+
     @avarices.each do |i|
       @user = User.find(i.user_id)
-      @user.pts = x
-      @user.save
-      if x > 0
-        x = x - 1
+      if i == @avarices.first
+        @user.pts = x
+      else
+        if i.green == @avarices[@avarices.index(i)-1].green
+          @user.pts = x
+        else
+          if x > 0
+            x = x - 1 
+          end
+          @user.pts = x
+        end
       end
+      @user.save
     end
 
     x = 3
 
     @coleres.each do |i|
       @user = User.find(i.user_id)
-      @user.pts = x
-      @user.save
-      if x > 0
-        x = x - 1
+      if i == @coleres.first
+        @user.pts = x
+      else
+        if i.green == @coleres[@coleres.index(i)-1].green
+          @user.pts = x
+        else
+          if x > 0
+            x = x - 1 
+          end
+          @user.pts = x
+        end
       end
+      @user.save
     end
 
     x = 3
 
     @envies.each do |i|
       @user = User.find(i.user_id)
-      @user.pts = x
-      @user.save
-      if x > 0
-        x = x - 1
+      if i == @envies.first
+        @user.pts = x
+      else
+        if i.green == @envies[@envies.index(i)-1].green
+          @user.pts = x
+        else
+          if x > 0
+            x = x - 1 
+          end
+          @user.pts = x
+        end
       end
+      @user.save
     end
 
     x = 3
 
     @gourmandises.each do |i|
       @user = User.find(i.user_id)
-      @user.pts = x
-      @user.save
-      if x > 0
-        x = x - 1
+      if i == @gourmandises.first
+        @user.pts = x
+      else
+        if i.green == @gourmandises[@gourmandises.index(i)-1].green
+          @user.pts = x
+        else
+          if x > 0
+            x = x - 1 
+          end
+          @user.pts = x
+        end
       end
+      @user.save
     end
 
     x = 3
 
     @luxures.each do |i|
       @user = User.find(i.user_id)
-      @user.pts = x
-      @user.save
-      if x > 0
-        x = x - 1
+      if i == @luxures.first
+        @user.pts = x
+      else
+        if i.green == @luxures[@luxures.index(i)-1].green
+          @user.pts = x
+        else
+          if x > 0
+            x = x - 1 
+          end
+          @user.pts = x
+        end
       end
+      @user.save
     end
 
     x = 3
 
     @orgueils.each do |i|
       @user = User.find(i.user_id)
-      @user.pts = x
-      @user.save
-      if x > 0
-        x = x - 1
+      if i == @orgueils.first
+        @user.pts = x
+      else
+        if i.green == @orgueils[@orgueils.index(i)-1].green
+          @user.pts = x
+        else
+          if x > 0
+            x = x - 1 
+          end
+          @user.pts = x
+        end
       end
+      @user.save
     end
-=end
-
 
   end
 
