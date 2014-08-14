@@ -11,7 +11,16 @@
   Ce jeu consiste à élire pour chaque défi le meilleur pécheur. Pour rajouter plus de piment, les votes seront filmés dans une salle à confess chaque soir. Les règles seront détaillées dans la section <a href="http://sept-anus.herokuapp.com/about">réglement</a>^^. De plus, le classement sera mis à jour après chaque vote pour être suivi en live! <strong>A VOUS DE JOUER !</strong>
 </p><br>
 <p> Le meilleur pécheur gagnera une récompense alléchante, puisque c'est une cotte de boeuf chez le restaurent <a href="https://plus.google.com/111781910334067225905/about?gl=fr&hl=fr">le petit basque</a>. Bien sûr le repas sera payé par les perdants. </p>
-<h3>
-  Le compte à rebours a commencé ! il vous reste plus que :
-</h3>
-<div id="countdown"></div>
+
+<% time = Time.new %>
+<% time1 = Time.new(2014,8,17,21,30) %>
+<% time2 = Time.new(2014,9,1,16,30) %>
+
+<% if time  < time1 %>
+  <h3>Le compte à rebours a commencé ! il vous reste plus que :</h3>
+  <div id="countdown"></div>
+<% elsif time < time2 %>
+  <h2> <strong>NOUS Y SOMMES JUSQU'AU 1 SEPTEMBRE</strong> </h2>
+<% else %>
+  <h1> <strong>The END</strong> </h1>
+<% end %>
